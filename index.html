@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz App</h1>
+            <p>Test your knowledge with these trivia questions</p>
+        </header>
+        
+        <div id="category-selector" class="category-selector">
+            <h2>Select Quiz Category</h2>
+            <select id="category">
+                <option value="9">General Knowledge</option>
+                <option value="21">Sports</option>
+                <option value="23">History</option>
+                <option value="27">Animals</option>
+                <option value="18">Science: Computers</option>
+            </select>
+            <br>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">Question <span id="current">1</span> of <span id="total">10</span></div>
+            <div class="timer" id="timer">30s</div>
+        </div>
+        
+        <div id="quiz-page" style="display: none;">
+            <div class="question-container">
+                <h2 class="question" id="question-text"></h2>
+                <ul class="options" id="options-list"></ul>
+            </div>
+            
+            <div class="navigation">
+                <button id="prev-btn" disabled>Previous</button>
+                <button id="next-btn">Next</button>
+                <button id="submit-btn" style="display: none;">Submit</button>
+            </div>
+        </div>
+        
+        <div id="results-page" style="display: none;">
+            <div class="results-container">
+                <h2 class="score">Your Score: <span id="score-value" class="score-value">0</span></h2>
+                <ul class="results-list" id="results-list"></ul>
+                <div class="navigation">
+                    <button id="restart-btn">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">Loading questions...</div>
+        <div id="error" class="error" style="display: none;">
+            Failed to load questions. Please check your internet connection and try again.
+            <br>
+            <button class="error-btn" id="retry-btn">Retry</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
